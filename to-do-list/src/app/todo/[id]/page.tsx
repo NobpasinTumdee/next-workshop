@@ -1,4 +1,5 @@
 import { createTodo, deleteTodo, getTodos, getUser } from '../actions';
+import AOSInitializer from '@/lib/AOSInitializer';
 
 export default async function TodoPage(
     { params }: { params: { id: string } }
@@ -9,18 +10,19 @@ export default async function TodoPage(
 
     return (
         <>
+            <AOSInitializer />
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
-                <h1>📝 Todo List </h1>
-                <h1>🎉 Welcome {UserInfo?.firstName}</h1>
+                <h1 data-aos="fade-down">📝 Todo List </h1>
+                <h1 data-aos="fade-down">🎉 Welcome {UserInfo?.firstName}</h1>
 
                 <form action={createTodo} className='todo-form'>
-                    <input name="title" placeholder="New Header" />
-                    <input name="content" placeholder="New body..." />
+                    <input name="title" placeholder="New Header" data-aos="fade-right" />
+                    <input name="content" placeholder="New body..."  data-aos="fade-left" />
                     <input type="hidden" name="userId" value={awaitedParams.id} />
-                    <button type="submit">Add</button>
+                    <button type="submit" data-aos="fade-down" data-aos-duration="2000">Add</button>
                 </form>
 
-                <ul className='todo-list'>
+                <ul className='todo-list' data-aos="fade-up">
                     {todos.length === 0 ? (
                         <>
                            <h3>Yay! Great job! Your work is done! Go out and touch the grass!</h3>
