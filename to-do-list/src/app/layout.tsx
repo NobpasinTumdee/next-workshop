@@ -16,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link className="menu-nav" href={`/todo/${2}/Alice`}>User Alice</Link>
             </div>
           </nav>
+          <div style={{height: '70px'}}></div>
 
           {children}
 
