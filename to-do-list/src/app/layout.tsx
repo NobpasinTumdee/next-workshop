@@ -12,13 +12,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="menu-navs">
               <Link className="menu-nav" href="/">Home</Link>
               <Link className="menu-nav" href="/todo">To-Do List</Link>
-              <Link className="menu-nav" href="/todo">SOMETING</Link>
-              <Link className="menu-nav" href="/todo">SOMETING</Link>
-
+              <Link className="menu-nav" href={`/todo/${1}/Bob`}>User Bob</Link>
+              <Link className="menu-nav" href={`/todo/${2}/Alice`}>User Alice</Link>
             </div>
           </nav>
 
           {children}
+
         </main>
       </body>
     </html>
